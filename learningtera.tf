@@ -130,7 +130,7 @@ resource "aws_instance" "launching-server" {
   ami           = "ami-0d758c1134823146a" # us-west-2
   instance_type = "t2.micro"
   availability_zone ="ap-south-1a"
-  key_name = "rohittestaccount"
+  key_name = "yourkeypair name"
 
   network_interface {
     network_interface_id = aws_network_interface.webserver.id
@@ -140,15 +140,7 @@ resource "aws_instance" "launching-server" {
   
 
   user_data = <<-EOF
-            #!/bin/bash
-            # Update your Amazon Linux 2 (EC2 Instance)
-            yum update -y
-            #Install the Epel Repository to download and install PIP.
-            sudo amazon-linux-extras install epel -y
-            #installvirtual environment
-            sudo pip3 install virtualenv
-            #Check Whereis command to see location of  virtualenv
-            whereis virtualenv
+            put in the details of the files which you wish to install.
             EOF
 
 
